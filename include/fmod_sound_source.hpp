@@ -98,7 +98,7 @@ namespace al
 		const FMOD::Channel *GetInternalSource() const;
 		FMOD::Channel *GetInternalSource();
 	protected:
-		virtual void DoAddEffect(AuxiliaryEffectSlot &slot,uint32_t slotId,const EffectParams &params) override {}
+		virtual void DoAddEffect(IAuxiliaryEffectSlot &slot,uint32_t slotId,const EffectParams &params) override {}
 		virtual void DoRemoveInternalEffect(uint32_t slotId) override {}
 		virtual void DoRemoveEffect(uint32_t slotId) override {}
 		struct SoundSourceData
