@@ -9,6 +9,7 @@
 #include <fmod_studio.hpp>
 #include <fmod_errors.h>
 #include <fsys/filesystem.h>
+#include <cstring>
 
 void al::check_result(uint32_t r)
 {
