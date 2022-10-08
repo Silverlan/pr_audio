@@ -28,7 +28,7 @@ std::shared_ptr<al::FMSoundSystem> al::FMSoundSystem::Create(const std::string &
 	});
 
 	FMOD::System *lowLevelSystem = nullptr;
-	al::check_result(system->getLowLevelSystem(&lowLevelSystem));
+	al::check_result(system->getCoreSystem(&lowLevelSystem));
 	al::check_result(lowLevelSystem->setSoftwareFormat(0,FMOD_SPEAKERMODE_5POINT1,0));
 
 	void *extraDriverData = nullptr;
