@@ -5,9 +5,17 @@
 #include "pr_audio_fmod.hpp"
 #include "fmod_sound_system.hpp"
 
+
+
+#ifdef __linux__
+#define DLLEXPORT __attribute__((visibility("default")))
+#else
+#define DLLEXPORT __declspec(dllexport)
+#endif
+
 extern "C"
 {
-	__declspec(dllexport) bool initialize_audio_api(float metersPerUnit,std::shared_ptr<al::ISoundSystem> &outSoundSystem,std::string &errMsg)
+    DLLEXPORT bool initialize_audio_api(float metersPerUnit,std::shared_ptr<al::ISoundSystem> &outSoundSystem,std::string &errMsg)
 	{
 		outSoundSystem = al::FMSoundSystem::Create(metersPerUnit);
 		return outSoundSystem != nullptr;
